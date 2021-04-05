@@ -1,23 +1,39 @@
 import { PizzaStore } from '../abstract'
 import { Pizza } from '../../pizzas/abstract'
-import { NYStyleCheesePizza } from '../../pizzas/variants/styles/ny/cheese'
-import { NYStyleVeggiePizza } from '../../pizzas/variants/styles/ny/veggie'
-import { NYStyleClamPizza } from '../../pizzas/variants/styles/ny/clam'
-import { NYStylePepperoniPizza } from '../../pizzas/variants/styles/ny/pepperoni'
+import { NYPizzaIngredientFactory } from '../../ingredient-factory/variants/ny'
+import { PizzaIngredientFactory } from '../../ingredient-factory/interface'
+import { CheesePizza } from '../../pizzas/variants/cheese'
+import { ClamPizza } from '../../pizzas/variants/clam'
+import { VeggiePizza } from '../../pizzas/variants/veggie'
+import { PepperoniPizza } from '../../pizzas/variants/pepperoni'
 
 class NYPizzaStore extends PizzaStore {
   createPizza(item: string): Pizza {
+    const ingredientFactory: PizzaIngredientFactory = new NYPizzaIngredientFactory()
+
     if (item === 'cheese') {
-      return new NYStyleCheesePizza()
+      const pizza = new CheesePizza(ingredientFactory)
+      pizza.setName('New York Style Cheese Pizza')
+
+      return pizza
     } else if (item === 'veggie') {
-      return new NYStyleVeggiePizza()
+      const pizza = new VeggiePizza(ingredientFactory)
+      pizza.setName('New York Style Veggie Pizza')
+
+      return pizza
     } else if (item === 'clam') {
-      return new NYStyleClamPizza()
+      const pizza = new ClamPizza(ingredientFactory)
+      pizza.setName('New York Style Clam Pizza')
+
+      return pizza
     } else if (item === 'pepperoni') {
-      return new NYStylePepperoniPizza()
+      const pizza = new PepperoniPizza(ingredientFactory)
+      pizza.setName('New York Style Pepperoni Pizza')
+
+      return pizza
     }
 
-    throw new Error('Invalid pizza type')
+    throw new Error('Invalid Pizza Item Type')
   }
 }
 
