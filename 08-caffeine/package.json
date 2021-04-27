@@ -1,0 +1,17 @@
+{
+  "name": "08-caffeine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "Wei-Tang Lin <wtlin1228@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "8.0.0",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
+  }
+}
