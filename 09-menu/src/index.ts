@@ -1,5 +1,6 @@
 import DinerMenu from './menu/variants/diner-menu'
 import PancakeHouseMenu from './menu/variants/pancake-house-menu'
+import CafeMenu from './menu/variants/cafe-menu'
 import Menu from './menu/menu'
 
 class Waitress {
@@ -20,10 +21,13 @@ class Waitress {
 function main() {
   const dinerMenu = new DinerMenu()
   const pancakeHouseMenu = new PancakeHouseMenu()
+  const cafeMenu = new CafeMenu()
+
   const waitress = new Waitress()
 
   waitress.printMenu(dinerMenu)
   waitress.printMenu(pancakeHouseMenu)
+  waitress.printMenu(cafeMenu)
 }
 
 main()

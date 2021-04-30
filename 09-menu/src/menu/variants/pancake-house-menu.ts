@@ -1,4 +1,4 @@
-import PancakeHouseMenuIterator from '../../iterators/pancake-house-menu-iterator'
+import MenuIterator from '../../iterators/menu-iterator'
 import Menu from '../menu'
 import MenuItem from '../menu-item'
 
@@ -40,7 +40,7 @@ class PancakeHouseMenu extends Menu {
   }
 
   [Symbol.iterator]() {
-    return new PancakeHouseMenuIterator(this.menuItems)
+    return new MenuIterator(this.menuItems)
   }
 
   addItem(

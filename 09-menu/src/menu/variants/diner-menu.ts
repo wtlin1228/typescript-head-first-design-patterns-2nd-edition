@@ -1,4 +1,4 @@
-import DinerMenuIterator from '../../iterators/diner-menu-iterator'
+import MenuIterator from '../../iterators/menu-iterator'
 import Menu from '../menu'
 import MenuItem from '../menu-item'
 
@@ -43,7 +43,7 @@ class DinerMenu extends Menu {
   }
 
   [Symbol.iterator]() {
-    return new DinerMenuIterator(this.menuItems)
+    return new MenuIterator(this.menuItems)
   }
 
   addItem(

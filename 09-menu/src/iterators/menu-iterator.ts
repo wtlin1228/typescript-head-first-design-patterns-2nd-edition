@@ -1,6 +1,6 @@
 import MenuItem from '../menu/menu-item'
 
-class DinerMenuIterator implements Iterator<MenuItem, any, MenuItem> {
+class MenuIterator implements Iterator<MenuItem, any, MenuItem> {
   private items: MenuItem[]
   private position: number
 
@@ -29,4 +29,4 @@ class DinerMenuIterator implements Iterator<MenuItem, any, MenuItem> {
   }
 }
 
-export default DinerMenuIterator
+export default MenuIterator
