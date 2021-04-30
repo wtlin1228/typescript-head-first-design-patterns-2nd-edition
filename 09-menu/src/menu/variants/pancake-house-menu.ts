@@ -1,10 +1,12 @@
 import PancakeHouseMenuIterator from '../../iterators/pancake-house-menu-iterator'
+import Menu from '../menu'
 import MenuItem from '../menu-item'
 
-class PancakeHouseMenu {
+class PancakeHouseMenu extends Menu {
   private menuItems: MenuItem[] = []
 
   constructor() {
+    super()
     const menuItems = [
       {
         name: "K&B's Pancake Breakfast",

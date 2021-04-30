@@ -1,12 +1,14 @@
 import DinerMenuIterator from '../../iterators/diner-menu-iterator'
+import Menu from '../menu'
 import MenuItem from '../menu-item'
 
-class DinerMenu {
+class DinerMenu extends Menu {
   private MAX_ITEMS = 6
   private numberOfItems = 0
   private menuItems: MenuItem[] = []
 
   constructor() {
+    super()
     const menuItems = [
       {
         name: 'Vegetarian BLT',
