@@ -1,6 +1,5 @@
-import DinerMenuIterator from '../../iterator/variants/diner-menu-iterator'
+import DinerMenuIterator from '../../iterators/diner-menu-iterator'
 import MenuItem from '../menu-item'
-import MyIterator from '../../iterator/my-iterator'
 
 class DinerMenu {
   private MAX_ITEMS = 6
@@ -41,7 +40,7 @@ class DinerMenu {
     )
   }
 
-  createIterator(): MyIterator<MenuItem> {
+  createIterator(): Iterator<MenuItem, any, MenuItem> {
     return new DinerMenuIterator(this.menuItems)
   }
 

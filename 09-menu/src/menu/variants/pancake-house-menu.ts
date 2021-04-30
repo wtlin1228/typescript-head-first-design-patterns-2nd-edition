@@ -1,5 +1,4 @@
-import MyIterator from '../../iterator/my-iterator'
-import PancakeHouseMenuIterator from '../../iterator/variants/pancake-house-menu-iterator'
+import PancakeHouseMenuIterator from '../../iterators/pancake-house-menu-iterator'
 import MenuItem from '../menu-item'
 
 class PancakeHouseMenu {
@@ -38,7 +37,7 @@ class PancakeHouseMenu {
     )
   }
 
-  createIterator(): MyIterator<MenuItem> {
+  createIterator(): Iterator<MenuItem, any, MenuItem> {
     return new PancakeHouseMenuIterator(this.menuItems)
   }
 

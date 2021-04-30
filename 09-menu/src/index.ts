@@ -1,6 +1,5 @@
 import DinerMenu from './menu/variants/diner-menu'
 import MenuItem from './menu/menu-item'
-import MyIterator from './iterator/my-iterator'
 import PancakeHouseMenu from './menu/variants/pancake-house-menu'
 
 class Waitress {
@@ -22,12 +21,13 @@ class Waitress {
     this._printMenu(pancakeHouseIterator)
   }
 
-  private _printMenu(iterator: MyIterator<MenuItem>): void {
-    while (iterator.hasNext()) {
-      const menuItem = iterator.next()
+  private _printMenu(iterator: Iterator<MenuItem, any, MenuItem>): void {
+    let next = iterator.next()
+    while (!next.done) {
       console.log(
-        `${menuItem.getName()}, ${menuItem.getPrice()} -- ${menuItem.getDescription()}`
+        `${next.value.getName()}, ${next.value.getPrice()} -- ${next.value.getDescription()}`
       )
+      next = iterator.next()
     }
   }
 }

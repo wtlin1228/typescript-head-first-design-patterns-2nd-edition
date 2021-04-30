@@ -1,9 +1,6 @@
-import MenuItem from '../../menu/menu-item'
-import MyIterator from '../my-iterator'
+import MenuItem from '../menu/menu-item'
 
-// The implementation is exactly the same with DinerMenuIterator
-// because there is only one Array in JavaScript world.
-class PancakeHouseMenuIterator implements MyIterator<MenuItem> {
+class DinerMenuIterator implements Iterator<MenuItem, any, MenuItem> {
   private items: MenuItem[]
   private position: number
 
@@ -12,10 +9,13 @@ class PancakeHouseMenuIterator implements MyIterator<MenuItem> {
     this.position = 0
   }
 
-  next(): MenuItem {
+  next(): IteratorResult<MenuItem> {
     const result = this.items[this.position]
     this.position = this.position + 1
-    return result
+    return {
+      done: this.position > this.items.length,
+      value: result,
+    }
   }
 
   hasNext(): boolean {
@@ -29,4 +29,4 @@ class PancakeHouseMenuIterator implements MyIterator<MenuItem> {
   }
 }
 
-export default PancakeHouseMenuIterator
+export default DinerMenuIterator
