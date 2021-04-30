@@ -27,6 +27,14 @@ function main() {
 
   waitress.printMenu(dinerMenu)
   waitress.printMenu(pancakeHouseMenu)
+
+  for (let item of dinerMenu) {
+    console.log(item)
+  }
+
+  for (let item of dinerMenu) {
+    console.log(item)
+  }
 }
 
 main()

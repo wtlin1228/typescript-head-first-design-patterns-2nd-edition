@@ -43,6 +43,10 @@ class PancakeHouseMenu extends Menu {
     return new PancakeHouseMenuIterator(this.menuItems)
   }
 
+  [Symbol.iterator]() {
+    return new PancakeHouseMenuIterator(this.menuItems)
+  }
+
   addItem(
     name: string,
     description: string,
