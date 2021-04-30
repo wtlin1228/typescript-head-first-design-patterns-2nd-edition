@@ -42,10 +42,6 @@ class DinerMenu extends Menu {
     )
   }
 
-  createIterator(): Iterator<MenuItem, any, MenuItem> {
-    return new DinerMenuIterator(this.menuItems)
-  }
-
   [Symbol.iterator]() {
     return new DinerMenuIterator(this.menuItems)
   }
