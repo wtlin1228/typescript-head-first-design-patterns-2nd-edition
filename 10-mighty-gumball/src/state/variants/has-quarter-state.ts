@@ -1,6 +1,14 @@
 import GumballMachine from '../../gumball-machine'
 import State from '../interface'
 
+function getRandomInt(max: number) {
+  return Math.floor(Math.random() * max)
+}
+
+function isWinner(): boolean {
+  return getRandomInt(10) === 0
+}
+
 class HasQuarterState implements State {
   private gumballMachine: GumballMachine
 
@@ -19,7 +27,12 @@ class HasQuarterState implements State {
 
   turnCrank(): void {
     console.log('You turned...')
-    this.gumballMachine.setState(this.gumballMachine.getSoldState())
+
+    if (isWinner() && this.gumballMachine.getCount() > 1) {
+      this.gumballMachine.setState(this.gumballMachine.getWinnerState())
+    } else {
+      this.gumballMachine.setState(this.gumballMachine.getSoldState())
+    }
   }
 
   dispense(): void {

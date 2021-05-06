@@ -3,12 +3,14 @@ import HasQuarterState from './state/variants/has-quarter-state'
 import NoQuarterState from './state/variants/no-quarter-state'
 import SoldOutState from './state/variants/sold-out-state'
 import SoldState from './state/variants/sold-state'
+import WinnerState from './state/variants/winner-state'
 
 class GumballMachine {
   private soldOutState: State
   private noQuarterState: State
   private hasQuarterState: State
   private soldState: State
+  private winnerState: State
 
   private state: State
   private count: number = 0
@@ -18,6 +20,7 @@ class GumballMachine {
     this.noQuarterState = new NoQuarterState(this)
     this.hasQuarterState = new HasQuarterState(this)
     this.soldState = new SoldState(this)
+    this.winnerState = new WinnerState(this)
 
     this.count = count
     if (count > 0) {
@@ -60,6 +63,10 @@ class GumballMachine {
     return this.soldState
   }
 
+  getWinnerState(): State {
+    return this.winnerState
+  }
+
   getCount(): number {
     return this.count
   }
@@ -86,6 +93,10 @@ class GumballMachine {
 
       case this.soldState:
         message = 'Machine is waiting for quarter'
+        break
+
+      case this.winnerState:
+        message = 'Machine got a new winner'
         break
 
       default:
