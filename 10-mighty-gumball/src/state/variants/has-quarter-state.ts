@@ -38,6 +38,8 @@ class HasQuarterState implements State {
   dispense(): void {
     console.log('You need to turn the crank')
   }
+
+  refill(): void {}
 }
 
 export default HasQuarterState

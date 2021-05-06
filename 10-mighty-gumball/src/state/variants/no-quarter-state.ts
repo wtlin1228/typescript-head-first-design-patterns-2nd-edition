@@ -24,6 +24,8 @@ class NoQuarterState implements State {
   dispense(): void {
     console.log('You need to pay first')
   }
+
+  refill(): void {}
 }
 
 export default NoQuarterState

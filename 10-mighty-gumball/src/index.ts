@@ -24,6 +24,15 @@ function main(): void {
   gumballMachine.turnCrank()
 
   console.log(gumballMachine.toString())
+
+  gumballMachine.insertQuarter()
+  gumballMachine.turnCrank()
+
+  console.log(gumballMachine.toString())
+
+  gumballMachine.refill(5)
+
+  console.log(gumballMachine.toString())
 }
 
 main()

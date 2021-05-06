@@ -71,6 +71,14 @@ class GumballMachine {
     return this.count
   }
 
+  refill(n: number): void {
+    this.count = this.count + n
+    console.log(
+      `This gumball machine was just refilled; its new count is ${this.count}`
+    )
+    this.state.refill()
+  }
+
   releaseBall(): void {
     console.log('A gumball comes rolling out the slot')
     this.count = this.count - 1

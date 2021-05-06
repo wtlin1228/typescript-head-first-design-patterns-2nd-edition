@@ -30,6 +30,8 @@ class SoldState implements State {
       this.gumballMachine.setState(this.gumballMachine.getSoldOutState())
     }
   }
+
+  refill(): void {}
 }
 
 export default SoldState

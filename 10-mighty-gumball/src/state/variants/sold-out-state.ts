@@ -2,7 +2,6 @@ import GumballMachine from '../../gumball-machine'
 import State from '../interface'
 
 class SoldOutState implements State {
-  // @ts-expect-error
   private gumballMachine: GumballMachine
 
   constructor(gumballMachine: GumballMachine) {
@@ -23,6 +22,10 @@ class SoldOutState implements State {
 
   dispense(): void {
     console.log('No gumball dispensed')
+  }
+
+  refill(): void {
+    this.gumballMachine.setState(this.gumballMachine.getNoQuarterState())
   }
 }
 

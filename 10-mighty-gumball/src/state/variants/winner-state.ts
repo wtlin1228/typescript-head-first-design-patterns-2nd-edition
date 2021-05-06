@@ -39,6 +39,10 @@ class WinnerState implements State {
 
     console.log("YOU'RE A WINNER! You got two gumballs for your quarter")
   }
+
+  refill(): void {
+    console.log('Gumballs are not sold out yet')
+  }
 }
 
 export default WinnerState
