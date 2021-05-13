@@ -1,3 +1,2 @@
-1. `yarn install`
-2. `yarn build`
-3. `yarn start`
+1. `npm install`
+2. `npm start`
