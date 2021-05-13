@@ -3,19 +3,19 @@ interface IFlyBehavior {
 }
 
 class FlyWithWings implements IFlyBehavior {
-  fly() {
+  fly(): void {
     console.log("I'm flying")
   }
 }
 
 class FlyNoWay implements IFlyBehavior {
-  fly() {
+  fly(): void {
     console.log("I can't fly")
   }
 }
 
 class FlyRocketPowered implements IFlyBehavior {
-  fly() {
+  fly(): void {
     console.log("I'm flying with a rocket!")
   }
 }

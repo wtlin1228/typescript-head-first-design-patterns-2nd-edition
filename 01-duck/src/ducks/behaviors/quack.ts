@@ -3,19 +3,19 @@ interface IQuackBehavior {
 }
 
 class Quack implements IQuackBehavior {
-  quack() {
+  quack(): void {
     console.log('Quack')
   }
 }
 
 class MuteQuack implements IQuackBehavior {
-  quack() {
+  quack(): void {
     console.log('<< Silence >>')
   }
 }
 
 class Squeak implements IQuackBehavior {
-  quack() {
+  quack(): void {
     console.log('Squeak')
   }
 }

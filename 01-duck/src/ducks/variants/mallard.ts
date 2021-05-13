@@ -7,7 +7,7 @@ class MallardDuck extends Duck {
     super(new Quack(), new FlyWithWings())
   }
 
-  display() {
+  display(): void {
     console.log("I'm a real Mallard duck")
   }
 }

@@ -3,8 +3,8 @@ import { IQuackBehavior } from './behaviors/quack'
 
 abstract class Duck {
   constructor(
-    public quackBehavior: IQuackBehavior,
-    public flyBehavior: IFlyBehavior
+    private quackBehavior: IQuackBehavior,
+    private flyBehavior: IFlyBehavior
   ) {}
 
   abstract display(): void
@@ -17,11 +17,11 @@ abstract class Duck {
     this.flyBehavior.fly()
   }
 
-  setFlyBehavior(fb: IFlyBehavior) {
+  setFlyBehavior(fb: IFlyBehavior): void {
     this.flyBehavior = fb
   }
 
-  setQuackBehavior(qb: IQuackBehavior) {
+  setQuackBehavior(qb: IQuackBehavior): void {
     this.quackBehavior = qb
   }
 

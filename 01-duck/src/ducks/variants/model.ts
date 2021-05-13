@@ -7,7 +7,7 @@ class ModelDuck extends Duck {
     super(new Quack(), new FlyNoWay())
   }
 
-  display() {
+  display(): void {
     console.log("I'm a model duck")
   }
 }
