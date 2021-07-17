@@ -1,6 +1,6 @@
 import MenuItem from '../menu/menu-item'
 
-class MenuIterator implements Iterator<MenuItem, any, MenuItem> {
+class MenuIterator implements Iterator<MenuItem> {
   private items: MenuItem[]
   private position: number
 
@@ -9,7 +9,7 @@ class MenuIterator implements Iterator<MenuItem, any, MenuItem> {
     this.position = 0
   }
 
-  next(): IteratorResult<MenuItem> {
+  next() {
     const result = this.items[this.position]
     this.position = this.position + 1
     return {
